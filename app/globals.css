@@ -1,0 +1,60 @@
+/* Стиль «сайт 2010 года». Шрифт Tahoma стоит на любом компьютере — ничего не загружается из интернета. */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Tahoma, Verdana, Geneva, "DejaVu Sans", sans-serif;
+  background: #EDF1F5;
+  color: #222222;
+  font-size: 14px;
+}
+
+a { color: #2B587A; }
+a:hover { color: #1C3E5A; }
+
+@layer components {
+  /* Основные кнопки: синие, с «объёмной» нижней границей, как в 2010 */
+  button.bg-ink, a.bg-ink {
+    border: 1px solid #3B6290;
+    border-bottom-width: 3px;
+    font-weight: bold;
+  }
+  button.bg-ink:hover:not(:disabled), a.bg-ink:hover { background-color: #3F6A9B; }
+
+  /* Поля ввода: прямоугольные, с рамкой */
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    border-radius: 0 !important;
+    border-color: #A9B7C6;
+  }
+  input:focus, select:focus, textarea:focus { outline: 2px solid #9EBFDD; outline-offset: 0; }
+
+  /* Заголовок блока (серо-голубая полоса над содержимым) */
+  .box-head {
+    background: #E1E7ED;
+    border-bottom: 1px solid #C5D0DB;
+    padding: 6px 10px;
+    font-weight: bold;
+    color: #2B587A;
+    font-size: 14px;
+  }
+
+  /* Вкладки как в 2010 */
+  .tab {
+    padding: 6px 12px;
+    background: #DAE2EA;
+    border: 1px solid #C5D0DB;
+    border-bottom: none;
+    color: #2B587A;
+    font-size: 13px;
+    text-decoration: underline;
+  }
+  .tab-on {
+    background: #FFFFFF;
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none;
+    position: relative;
+    top: 1px;
+  }
+}
